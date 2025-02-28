@@ -45,6 +45,8 @@ wall_selection=$(find "${wall_dir}"  -maxdepth 1  -type f \( -iname "*.jpg" -o -
 
 # Set the wallpaper
 [[ -n "$wall_selection" ]] || exit 1
+pkill mpvpaper
+sleep 0.5
 hyprctl hyprpaper preload ${wall_dir}/${wall_selection}
 hyprctl hyprpaper wallpaper ,contain:${wall_dir}/${wall_selection}
 hyprctl hyprpaper unload unused
