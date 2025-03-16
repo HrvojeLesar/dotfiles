@@ -364,4 +364,11 @@
         "exec-if": "~/.config/waybar/display-event.sh > /dev/null",
         "interval": 3600,
     },
+
+    "custom/restore-count": {
+        "tooltip": false,
+        "format": "R: {}",
+        "exec": "~/.config/waybar/restore-count.sh",
+        "interval": 1,
+    },
 }

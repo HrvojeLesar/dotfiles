@@ -12,5 +12,5 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["custom/events"],
-    "modules-right": ["tray", "custom/playerctl", "custom/spotify", "memory", "cpu", "pulseaudio", "network", "backlight", "battery", "custom/notification", "clock", "custom/exit", ],
+    "modules-right": ["tray", "custom/restore-count", "custom/playerctl", "custom/spotify", "memory", "cpu", "pulseaudio", "network", "backlight", "battery", "custom/notification", "clock", "custom/exit", ],
 }
