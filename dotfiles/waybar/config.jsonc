@@ -1,16 +1,28 @@
 {
-    "include": [
-        "~/.config/waybar/modules.jsonc"
-    ],
+  "include": ["~/.config/waybar/modules.jsonc"],
 
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    //"gtk-layer-shell": true,
-    // "height": 28, // Waybar height (to be removed for auto height)
-    // "width": 1920, // Waybar width
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  //"gtk-layer-shell": true,
+  // "height": 28, // Waybar height (to be removed for auto height)
+  // "width": 1920, // Waybar width
 
-    // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["custom/events"],
-    "modules-right": ["tray", "custom/restore-count", "custom/playerctl", "custom/spotify", "memory", "cpu", "pulseaudio", "network", "backlight", "battery", "custom/notification", "clock", "custom/exit", ],
+  // Choose the order of the modules
+  "modules-left": ["hyprland/workspaces", "hyprland/workspaces#special"],
+  "modules-center": ["custom/events"],
+  "modules-right": [
+    "tray",
+    "custom/restore-count",
+    "custom/playerctl",
+    "custom/spotify",
+    "memory",
+    "cpu",
+    "pulseaudio",
+    "network",
+    "backlight",
+    "battery",
+    "custom/notification",
+    "clock",
+    "custom/exit",
+  ],
 }

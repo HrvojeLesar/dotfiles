@@ -371,4 +371,21 @@
         "exec": "~/.config/waybar/restore-count.sh",
         "interval": 1,
     },
+
+    "hyprland/workspaces#special": {
+        "on-click": "activate",
+        "show-special": true,
+        "all-outputs": true,
+        "ignore-workspaces": [
+            "^((?!special).)*$",
+            "^special:restore$",
+        ],
+        "format": "{name}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": "",
+            "empty": "",
+        },
+    },
 }
