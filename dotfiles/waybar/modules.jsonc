@@ -388,4 +388,19 @@
             "empty": "",
         },
     },
+
+    "custom/bb-check": {
+        "tooltip": false,
+        "format": "{}",
+        "on-click": "~/.config/waybar/bb.sh remove",
+        "exec": "~/.config/waybar/bb.sh check",
+        "interval": 1,
+    },
+
+    "custom/bb-interval": {
+        "tooltip": false,
+        "format": "",
+        "exec": "~/.config/waybar/bb.sh",
+        "interval": 120,
+    },
 }
