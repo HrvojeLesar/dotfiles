@@ -16,7 +16,7 @@ fi
 
 if [ "$1" == "check" ]; then
     if [ -f /tmp/bb-enabled ]; then
-        echo "BB enabled"
+        echo "BB"
     fi
     exit 0
 fi

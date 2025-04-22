@@ -9,8 +9,9 @@
 
   // Choose the order of the modules
   "modules-left": ["hyprland/workspaces", "hyprland/workspaces#special"],
-  "modules-center": ["custom/events", "custom/bb-check", "custom/bb-interval"],
+  "modules-center": ["custom/events", "custom/bb-interval"],
   "modules-right": [
+    "custom/bb-check",
     "tray",
     "custom/restore-count",
     "custom/playerctl",

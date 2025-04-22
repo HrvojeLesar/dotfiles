@@ -390,9 +390,10 @@
     },
 
     "custom/bb-check": {
-        "tooltip": false,
+        "tooltip-format": "Click to disable.\nRight click to reroll.",
         "format": "{}",
         "on-click": "~/.config/waybar/bb.sh remove",
+        "on-click-right": "~/.config/waybar/bb.sh",
         "exec": "~/.config/waybar/bb.sh check",
         "interval": 1,
     },
@@ -401,6 +402,6 @@
         "tooltip": false,
         "format": "",
         "exec": "~/.config/waybar/bb.sh",
-        "interval": 120,
+        "interval": 1200,
     },
 }
