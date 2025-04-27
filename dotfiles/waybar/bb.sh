@@ -26,7 +26,17 @@ if ! [ -f /tmp/bb-enabled ]; then
     exit 1
 fi
 
-file_name=$(shuf -n 1 -e 83124170_874301766363558_1776044198005949229_n.jpg nov.jpeg guc_m.jpg W_m.jpeg lon_m.jpg)
+
+names="83124170_874301766363558_1776044198005949229_n.jpg nov.jpeg guc_m.jpg W_m.jpeg lon_m.jpg sv.png"
+
+selected_name=$(cat /tmp/bb-enabled)
+
+if ! [ -z "${selected_name}" ]; then
+    names=$(echo $names | sed "s/$selected_name//")
+fi
+
+file_name=$(shuf -n 1 -e $names)
+echo "$file_name" > /tmp/bb-enabled
 
 file="/home/hrvoje/.config/hypr/wallpapers/$file_name"
 
