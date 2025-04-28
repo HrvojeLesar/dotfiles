@@ -35,12 +35,12 @@
         "on-click-middle": "close",
         "ignore-list": ["Alacritty", "kitty"],
         "app_ids-mapping": {
-            "firefoxdeveloperedition": "firefox-developer-edition"
+            "firefoxdeveloperedition": "firefox-developer-edition",
         },
         "rewrite": {
             "Firefox Web Browser": "Firefox",
-            "Foot Server": "Terminal"
-        }
+            "Foot Server": "Terminal",
+        },
     },
 
     // Hyprland Window
@@ -50,14 +50,14 @@
             "(.*) - Chromium": "$1",
             "(.*) - Brave Search": "$1",
             "(.*) - Outlook": "$1",
-            "(.*) Microsoft Teams": "$1"
+            "(.*) Microsoft Teams": "$1",
         },
-        "separate-outputs": true
+        "separate-outputs": true,
     },
 
     // Empty
     "custom/empty": {
-        "format": ""
+        "format": "",
     },
 
     // Cliphist
@@ -66,7 +66,7 @@
         "on-click": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh",
         "on-click-right": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh d",
         "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
-        "tooltip-format": "Left: Open clipboard Manager\nRight: Delete an entry\nMiddle: Clear list"
+        "tooltip-format": "Left: Open clipboard Manager\nRight: Delete an entry\nMiddle: Clear list",
     },
 
     // Updates Count
@@ -77,7 +77,7 @@
         "exec": "~/.config/ml4w/scripts/updates.sh",
         "interval": 1800,
         "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
-        "on-click-right": "~/.config/ml4w/settings/software.sh"
+        "on-click-right": "~/.config/ml4w/settings/software.sh",
     },
 
     // Wallpaper
@@ -85,14 +85,14 @@
         "format": "",
         "on-click": "bash -c waypaper &",
         "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
-        "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect"
+        "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect",
     },
 
     // Keybindings
     "custom/keybindings": {
         "format": "",
         "on-click": "~/.config/hypr/scripts/keybindings.sh",
-        "tooltip": false
+        "tooltip": false,
     },
 
     // Power Menu
@@ -100,7 +100,7 @@
         "format": " ",
         "on-click": "wlogout",
         "on-click-right": "hyprlock",
-        "tooltip-format": "Left: Power menu\nRight: Lock screen"
+        "tooltip-format": "Left: Power menu\nRight: Lock screen",
     },
 
     // Hypridle inhibitor
@@ -111,7 +111,7 @@
         "exec-on-event": true,
         "interval": 60,
         "exec": "~/.config/hypr/scripts/hypridle.sh status",
-        "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
+        "on-click": "~/.config/hypr/scripts/hypridle.sh toggle",
     },
 
     // Keyboard State
@@ -121,14 +121,14 @@
         "format": "{name} {icon}",
         "format-icons": {
             "locked": "",
-            "unlocked": ""
-        }
+            "unlocked": "",
+        },
     },
 
     // System tray
     "tray": {
         "icon-size": 21,
-        "spacing": 10
+        "spacing": 10,
     },
 
     "clock": {
@@ -136,13 +136,13 @@
         "format": "{:%H:%M:%S %d.%m.%C%y.}",
         "tooltip": false,
         "interval": 1,
-        "on-click-right": "gsimplecal"
+        "on-click-right": "gsimplecal",
     },
 
     // System
     "custom/system": {
         "format": "",
-        "tooltip": false
+        "tooltip": false,
     },
 
     "cpu": {
@@ -160,11 +160,11 @@
         "interval": 30,
         "format": "D {percentage_used}% ",
         "path": "/",
-        "on-click": "~/.config/ml4w/settings/system-monitor.sh"
+        "on-click": "~/.config/ml4w/settings/system-monitor.sh",
     },
 
     "hyprland/language": {
-        "format": "/ K {short}"
+        "format": "/ K {short}",
     },
 
     // Group Hardware
@@ -173,9 +173,15 @@
         "drawer": {
             "transition-duration": 300,
             "children-class": "not-memory",
-            "transition-left-to-right": false
+            "transition-left-to-right": false,
         },
-        "modules": ["custom/system", "disk", "cpu", "memory", "hyprland/language"]
+        "modules": [
+            "custom/system",
+            "disk",
+            "cpu",
+            "memory",
+            "hyprland/language",
+        ],
     },
 
     // Group Tools
@@ -184,23 +190,20 @@
         "drawer": {
             "transition-duration": 300,
             "children-class": "not-memory",
-            "transition-left-to-right": false
+            "transition-left-to-right": false,
         },
         "modules": [
             "custom/tools",
             "custom/cliphist",
             "custom/hypridle",
-            "custom/hyprshade"
-        ]
+            "custom/hyprshade",
+        ],
     },
 
     // Group Links
     "group/links": {
         "orientation": "horizontal",
-        "modules": [
-            "custom/chatgpt",
-            "custom/empty"      
-        ]
+        "modules": ["custom/chatgpt", "custom/empty"],
     },
 
     // Group Settings
@@ -209,13 +212,13 @@
         "drawer": {
             "transition-duration": 300,
             "children-class": "not-memory",
-            "transition-left-to-right": true
+            "transition-left-to-right": true,
         },
         "modules": [
             "custom/settings",
             "custom/waybarthemes",
-            "custom/wallpaper"
-        ]
+            "custom/wallpaper",
+        ],
     },
 
     // Network
@@ -237,7 +240,7 @@
         "states": {
             // "good": 95,
             "warning": 30,
-            "critical": 15
+            "critical": 15,
         },
         "format": "{icon} {capacity}%",
         "format-charging": "  {capacity}%",
@@ -245,7 +248,7 @@
         "format-alt": "{icon}  {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "format-icons": [" ", " ", " ", " ", " "],
     },
 
     "pulseaudio": {
@@ -264,11 +267,11 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", "", ""],
         },
         "on-click-right": "pavucontrol",
         "on-click-middle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     },
 
     // Bluetooth
@@ -278,14 +281,14 @@
         "format-off": "",
         "interval": 30,
         "on-click": "blueman-manager",
-        "format-no-controller": ""
+        "format-no-controller": "",
     },
 
     // Other
     "user": {
         "format": "{user}",
         "interval": 60,
-        "icon": false
+        "icon": false,
     },
 
     // backlight:
@@ -306,9 +309,9 @@
             "",
             "",
             "",
-            ""
+            "",
         ],
-        "scroll-step": 1
+        "scroll-step": 1,
     },
 
     "custom/spotify": {
@@ -320,10 +323,10 @@
         "on-click": "playerctl -p spotify play-pause",
         "on-click-right": "killall spotify",
         "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-        "on-scroll-up" : "playerctl -p spotify next",
-        "on-scroll-down" : "playerctl -p spotify previous",
+        "on-scroll-up": "playerctl -p spotify next",
+        "on-scroll-down": "playerctl -p spotify previous",
         "exec": "~/.config/waybar/mediaplayer.py --player spotify 2> /dev/null", // Script in resources/custom_modules folder
-        "exec-if": "pgrep spotify"
+        "exec-if": "pgrep spotify",
     },
 
     "custom/notification": {
@@ -337,14 +340,14 @@
             "inhibited-notification": "<span foreground='red'><sup></sup></span>",
             "inhibited-none": "",
             "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-inhibited-none": ""
+            "dnd-inhibited-none": "",
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
         "exec": "swaync-client -swb",
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
-        "escape": true
+        "escape": true,
     },
 
     "custom/playerctl": {
@@ -376,10 +379,7 @@
         "on-click": "activate",
         "show-special": true,
         "all-outputs": true,
-        "ignore-workspaces": [
-            "^((?!special).)*$",
-            "^special:restore$",
-        ],
+        "ignore-workspaces": ["^((?!special).)*$", "^special:restore$"],
         "format": "{name}",
         "format-icons": {
             "urgent": "",
