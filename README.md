@@ -1,4 +1,9 @@
-# Hyprland general configuration
+# My dotfiles
+
+Run `link.sh` from `dotfiles` directory to link all configurations.
+Folders that are linked should not exist when running script.
+
+## Hyprland general configuration
 
 Configuration files for a hyprland environment...
 
