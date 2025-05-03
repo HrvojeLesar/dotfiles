@@ -2,6 +2,10 @@
 
 if [ "$1" == "enable" ]; then
     echo "enabled"
+    read -sp "Enable bb: " enabled
+    if ! [ "$enabled" == "bb" ]; then
+        exit 0
+    fi
     touch /tmp/bb-enabled
 fi
 
