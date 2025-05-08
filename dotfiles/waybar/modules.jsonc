@@ -134,7 +134,7 @@
     "clock": {
         "timezone": "Europe/Zagreb",
         "format": "{:%H:%M:%S %d.%m.%C%y.}",
-        "tooltip": false,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 1,
         "on-click-right": "gsimplecal",
     },
@@ -402,6 +402,6 @@
         "tooltip": false,
         "format": "",
         "exec": "~/.config/waybar/bb.sh",
-        "interval": 1200,
+        "interval": 1800,
     },
 }

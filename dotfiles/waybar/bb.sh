@@ -25,6 +25,16 @@ if [ "$1" == "check" ]; then
     exit 0
 fi
 
+if [ "$1" == "bb" ]; then
+    read -sp "bb:" enabled
+    if ! [ "$enabled" == "bb" ]; then
+        exit 0
+    fi
+    cd ~/.config/hypr/wallpapers && shuf -e 83124170_874301766363558_1776044198005949229_n.jpg nov.jpeg guc_m.jpg W_m.jpeg | imv -s crop -t 120 & disown
+
+    exit 0
+fi
+
 if ! [ -f /tmp/bb-enabled ]; then
     echo "died"
     exit 1
