@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+names="lr_m.jpg nov_nb.jpeg guc_m.jpg W_m.jpeg lon_m.jpg orig_m_nb.jpg ni_m.jpg"
+
 if [ "$1" == "enable" ]; then
     echo "enabled"
     read -sp "Enable bb: " enabled
@@ -30,7 +32,7 @@ if [ "$1" == "bb" ]; then
     if ! [ "$enabled" == "bb" ]; then
         exit 0
     fi
-    cd ~/.config/hypr/wallpapers && shuf -e 83124170_874301766363558_1776044198005949229_n.jpg nov.jpeg guc_m.jpg W_m.jpeg | imv -s crop -t 120 & disown
+    cd ~/.config/hypr/wallpapers && shuf -e $names | imv -s crop -t 1800 & disown
 
     exit 0
 fi
@@ -40,8 +42,6 @@ if ! [ -f /tmp/bb-enabled ]; then
     exit 1
 fi
 
-
-names="83124170_874301766363558_1776044198005949229_n.jpg nov_nb.jpeg guc_m.jpg W_m.jpeg lon_m.jpg orig_m_nb.jpg ni_m.jpg"
 
 selected_name=$(cat /tmp/bb-enabled)
 
