@@ -1,5 +1,7 @@
 # My dotfiles
 
+Run `install.sh`
+
 After cloning run: `git submodule update --init --recursive`
 
 Run `link.sh` from `dotfiles` directory to link all configurations.
