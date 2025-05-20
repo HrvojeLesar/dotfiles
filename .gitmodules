@@ -1,0 +1,3 @@
+[submodule "dotfiles/neovim.files"]
+	path = dotfiles/neovim.files
+	url = https://github.com/HrvojeLesar/neovim.files
