@@ -1,0 +1,44 @@
+[helpers]
+
+[settings]
+default_target_type = "symbolic"
+
+[cliphist.files]
+"dotfiles/cliphist" = "~/.config/cliphist"
+
+[flameshot.files]
+"dotfiles/flameshot" = "~/.config/flameshot"
+
+[hypr.files]
+"dotfiles/hypr" = "~/.config/hypr"
+
+[nvim.files]
+"dotfiles/neovim.files" = "~/.config/nvim"
+
+[rofi.files]
+"dotfiles/rofi" = "~/.config/rofi"
+
+[systemd.files]
+"dotfiles/systemd" = "~/.config/systemd"
+
+[waybar.files]
+"dotfiles/waybar" = "~/.config/waybar"
+
+[wezterm.files]
+"dotfiles/wezterm" = "~/.config/wezterm"
+
+[wlogout.files]
+"dotfiles/wlogout" = "~/.config/wlogout"
+
+[alsoftrc.files]
+"dotfiles/.alsoftrc" = "~/.alsoftrc"
+
+[tmux.files]
+"dotfiles/.tmux.conf" = "~/.tmux.conf"
+
+[zsh.files]
+"dotfiles/.zsh_profile" = "~/.zsh_profile"
+"dotfiles/.zshrc" = "~/.zshrc"
+
+[mime.files]
+"dotfiles/mimeapps.list" = "~/.config/mimeapps.list"

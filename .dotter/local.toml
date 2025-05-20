@@ -1,0 +1,19 @@
+includes = []
+packages = [
+    "cliphist",
+    "flameshot",
+    "hypr",
+    "nvim",
+    "rofi",
+    "systemd",
+    "waybar",
+    "wezterm",
+    "alsoftrc",
+    "tmux",
+    "zsh",
+    "mime",
+]
+
+[files]
+
+[variables]
