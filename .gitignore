@@ -1,0 +1,4 @@
+dotfiles/ssh/*
+!dotfiles/ssh/decrypt.sh
+!dotfiles/ssh/encrypt.sh
+!dotfiles/ssh/*.gpg

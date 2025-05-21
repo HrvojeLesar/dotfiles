@@ -12,6 +12,7 @@ packages = [
     "tmux",
     "zsh",
     "mime",
+    "ssh",
 ]
 
 [files]
