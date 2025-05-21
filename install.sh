@@ -124,7 +124,6 @@ yay -S --needed \
     qjackctl \
     qt5-tools \
     qt5-wayland \
-    qt5ct-kde \
     qt6-wayland \
     qt6ct-kde \
     rofi-wayland \

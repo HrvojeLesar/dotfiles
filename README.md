@@ -19,4 +19,4 @@ Configuration files for a hyprland environment...
 
 ## TODO
 
-- [ ] Add a list of programs config depends on
+- [x] Add a list of programs config depends on

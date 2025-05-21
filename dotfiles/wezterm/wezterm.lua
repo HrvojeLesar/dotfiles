@@ -9,6 +9,12 @@ require("background")
 local config = wezterm.config_builder()
 
 config.color_scheme = globals.COLOR_SCHEME
+config.colors = {
+	background = "#161719",
+	selection_fg = "none",
+	selection_bg = "rgba(50% 50% 50% 50%)",
+}
+
 config.warn_about_missing_glyphs = false
 
 config.font = wezterm.font({
