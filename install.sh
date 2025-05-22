@@ -2,7 +2,12 @@
 
 bash ./scripts/install-yay.sh
 
-yay -S --needed \
+yay -S --needed --noconfirm \
+    rustup
+
+rustup default stable
+
+yay -S --needed --noconfirm \
     adobe-source-sans-fonts \
     adobe-source-serif-fonts \
     adwaita-qt5 \
