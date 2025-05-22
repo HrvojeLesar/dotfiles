@@ -24,6 +24,9 @@ default_target_type = "symbolic"
 [waybar.files]
 "dotfiles/waybar" = "~/.config/waybar"
 
+[waybar_laptop.files]
+"dotfiles/waybar-laptop/config.jsonc" = "~/.config/waybar/config.jsonc"
+
 [wezterm.files]
 "dotfiles/wezterm" = "~/.config/wezterm"
 
