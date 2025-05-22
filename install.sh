@@ -1,21 +1,32 @@
 #!/usr/bin/bash
 
+install_optional=false
+install_android_studio=false
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --optional)
+            install_optional=true
+            ;;
+        --android)
+            install_android_studio=true
+            ;;
+    esac
+    shift
+done
+
 bash ./scripts/install-yay.sh
 
-yay -S --needed --noconfirm \
-    rustup
+yay -Sy --needed rustup
 
 rustup default stable
 
-yay -S --needed --noconfirm \
+yay -Sy --needed \
     adobe-source-sans-fonts \
     adobe-source-serif-fonts \
     adwaita-qt5 \
     adwaita-qt6 \
     amd-ucode \
-    android-studio \
-    android-tools \
-    audacity \
     baobab \
     base \
     base-devel \
@@ -27,7 +38,6 @@ yay -S --needed --noconfirm \
     brightnessctl \
     btop \
     calc \
-    chromium \
     clang \
     cliphist \
     cmake \
@@ -47,7 +57,6 @@ yay -S --needed --noconfirm \
     fastfetch \
     ffmpegthumbnailer \
     firefox \
-    flameshot-git \
     gdlauncher-bin \
     gdm \
     git \
@@ -114,7 +123,6 @@ yay -S --needed --noconfirm \
     openvpn \
     pacman-contrib \
     pass \
-    path-of-building-community-git \
     pavucontrol \
     pinta \
     pipewire \
@@ -134,7 +142,6 @@ yay -S --needed --noconfirm \
     rofi-wayland \
     rsync \
     rust-analyzer \
-    rustup \
     sane-airscan \
     satty \
     scrcpy \
@@ -150,7 +157,6 @@ yay -S --needed --noconfirm \
     swtpm \
     system-config-printer \
     systemd-resolvconf \
-    thunderbird \
     tmux \
     transmission-qt \
     ttf-dejavu \
@@ -198,6 +204,21 @@ yay -S --needed --noconfirm \
     zip \
     zram-generator \
     zsh
+
+if install_android_studio; then
+    yay -Sy --needed \
+        android-studio \
+        android-tools
+fi
+
+if install_optional; then
+    yay -Sy --needed \
+        audacity \
+        chromium \
+        flameshot-git \
+        path-of-building-community-git \
+        thunderbird
+fi
 
 bash ./scripts/install-oh-my-zsh.sh
 bash ./scripts/enable-gcr-ssh-agent.sh
