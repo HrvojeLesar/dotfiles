@@ -8,6 +8,7 @@ packages = [
     "systemd",
     "waybar",
     "wezterm",
+    "wlogout",
     "alsoftrc",
     "tmux",
     "zsh",

@@ -6,6 +6,7 @@ packages = [
     "nvim",
     "rofi",
     "systemd",
+    "wlogout",
     "waybar",
     "waybar_laptop",
     "wezterm",
