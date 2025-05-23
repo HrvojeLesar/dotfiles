@@ -13,6 +13,7 @@ packages = [
     "zsh",
     "mime",
     "ssh",
+    "wojk_ssh",
 ]
 
 [files]
