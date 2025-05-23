@@ -9,3 +9,9 @@ dotfiles/wojk/ssh/*
 !dotfiles/wojk/ssh/*.gpg
 
 dotfiles/wojk/openvpn/*.ovpn
+dotfiles/wojk/openvpn/leonexpass
+
+dotfiles/wojk/systemd/*
+!dotfiles/wojk/systemd/decrypt.sh
+!dotfiles/wojk/systemd/encrypt.sh
+!dotfiles/wojk/systemd/*.gpg

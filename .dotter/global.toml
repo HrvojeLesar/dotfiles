@@ -65,6 +65,3 @@ default_target_type = "symbolic"
 
 [wojk_ssh_config.files]
 "dotfiles/wojk/ssh/config" = "~/.ssh/config"
-
-[wojk_openvpn.files]
-"dotfiles/wojk/openvpn/hlesar.ovpn" = "~/openvpn-clients/hlesar.ovpn"

@@ -1,0 +1,31 @@
+includes = []
+packages = [
+    "cliphist",
+    "flameshot",
+    "hypr",
+    "nvim",
+    "rofi",
+    "systemd",
+    "waybar",
+    "waybar_laptop",
+    "wezterm",
+    "alsoftrc",
+    "tmux",
+    "zsh",
+    "mime",
+    "ssh",
+    "wojk_ssh",
+    "wojk_ssh_config",
+]
+
+[files]
+
+[variables]
+
+[zsh.files."dotfiles/.zsh_profile"]
+target = "~/.zsh_profile"
+type = "template"
+append = """
+alias ssh-cemix-prod='sshpass -f ~/.ssh/cemix-prod-pass ssh www-cemix@lasselsberger1.leonex.de -o "IdentitiesOnly yes"'
+alias ssh-cemix-stage='sshpass -f ~/.ssh/cemix-stage-pass ssh www-cemix-staging@lasselsberger1.leonex.de -o "IdentitiesOnly yes"'
+"""
