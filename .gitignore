@@ -2,3 +2,10 @@ dotfiles/ssh/*
 !dotfiles/ssh/decrypt.sh
 !dotfiles/ssh/encrypt.sh
 !dotfiles/ssh/*.gpg
+
+dotfiles/wojk/ssh/*
+!dotfiles/wojk/ssh/decrypt.sh
+!dotfiles/wojk/ssh/encrypt.sh
+!dotfiles/wojk/ssh/*.gpg
+
+dotfiles/wojk/openvpn/*.ovpn
