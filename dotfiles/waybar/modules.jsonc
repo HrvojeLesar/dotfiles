@@ -11,7 +11,7 @@
         "on-scroll-up": "hyprctl dispatch workspace r-1",
         "on-scroll-down": "hyprctl dispatch workspace r+1",
         "on-click": "activate",
-        "active-only": false,
+        "active-only": true,
         "all-outputs": false,
         "format": "{}",
         "format-icons": {
@@ -20,10 +20,10 @@
             "default": "",
             "empty": "",
         },
-        // "persistent-workspaces": {
-        //     "DP-4": [1, 2, 3, 4, 5],
-        //     "HDMI-A-2": [6, 7, 8, 9, 10],
-        // }
+        "persistent-workspaces": {
+            "DP-4": [11, 12, 13, 14, 15],
+            "HDMI-A-2": [1, 2, 3, 4, 5],
+        }
     },
 
     // Taskbar
