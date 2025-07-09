@@ -20,6 +20,7 @@
         "cpu",
         "pulseaudio",
         "network",
+        "hyprland/language",
         "backlight",
         "battery",
         "custom/notification",

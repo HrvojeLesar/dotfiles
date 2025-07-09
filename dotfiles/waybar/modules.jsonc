@@ -165,7 +165,9 @@
     },
 
     "hyprland/language": {
-        "format": "/ K {short}",
+        "on-click": "hyprctl switchxkblayout all next",
+        "format": "{}",
+        "format-hr": "",
     },
 
     // Group Hardware
@@ -403,6 +405,18 @@
         "tooltip": false,
         "format": "",
         "exec": "~/.config/waybar/bb.sh",
-        "interval": 1800,
+        "interval": 86400,
+    },
+
+    "custom/wireguard-manager": {
+        "interval": 3,
+        "return-type": "json",
+        "format-icons": {
+            "connected": "<span color=\"#50fa7b\">VPN</span>",
+            "disconnected": "<span color=\"#ff5555\">VPN</span>"
+        },
+        "on-click": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -t",
+        "exec": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -s",
+        "format": "{icon}"
     },
 }
