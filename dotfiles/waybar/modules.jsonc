@@ -140,6 +140,12 @@
         "on-click-right": "gsimplecal",
     },
 
+    "clock#china": {
+        "timezone": "Asia/Shanghai",
+        "format": "Čina: {:%H:%M}",
+        "interval": 1,
+    },
+
     // System
     "custom/system": {
         "format": "",
