@@ -13,7 +13,7 @@
         "on-click": "activate",
         "active-only": true,
         "all-outputs": false,
-        "format": "{}",
+        "format": "{name}",
         "format-icons": {
             "urgent": "",
             "active": "",
@@ -24,7 +24,7 @@
             "DP-4": [11, 12, 13, 14, 15],
             "HDMI-A-2": [1, 2, 3, 4, 5],
             "*": 5,
-        }
+        },
     },
 
     // Taskbar
@@ -419,10 +419,10 @@
         "return-type": "json",
         "format-icons": {
             "connected": "<span color=\"#50fa7b\">VPN</span>",
-            "disconnected": "<span color=\"#ff5555\">VPN</span>"
+            "disconnected": "<span color=\"#ff5555\">VPN</span>",
         },
         "on-click": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -t",
         "exec": "exec ~/.config/waybar/wireguard-manager/wireguard-manager.sh -s",
-        "format": "{icon}"
+        "format": "{icon}",
     },
 }
