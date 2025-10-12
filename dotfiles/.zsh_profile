@@ -76,3 +76,17 @@ alias bb="~/.config/waybar/bb.sh bb"
 alias bb-enable="~/.config/waybar/bb.sh enable"
 
 export TERMINAL="/usr/bin/wezterm"
+
+dipl() {
+    # tmux new-session -d -c ~/dev/diplomski/RPGBattleMonitor/rpg_battle_monitor_lib
+    tmux new-session -d -c ~/dev/diplomski/RPGBattleMonitor/rpg_battle_monitor_frontend
+    tmux new-window -c ~/dev/diplomski/RPGBattleMonitor/rpg_battle_monitor_frontend
+    tmux send-keys -t:2 "npm run dev" C-m
+    tmux new-window -c ~/dev/diplomski/RPGBattleMonitor/rpg_battle_monitor_lib
+    tmux new-window -c ~/dev/diplomski/RPGBattleMonitor/rpg_battle_monitor_server
+    tmux send-keys -t:4 "cargo run" C-m
+    tmux select-window -t:2
+    tmux select-window -t:1
+    tmux send-keys -t:1 "nvim ." C-m
+    tmux attach-session
+}
