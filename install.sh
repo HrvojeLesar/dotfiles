@@ -2,6 +2,7 @@
 
 install_optional=false
 install_android_studio=false
+install_nvidia=false
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -10,6 +11,9 @@ while [[ $# -gt 0 ]]; do
             ;;
         --android)
             install_android_studio=true
+            ;;
+        --nvidia)
+            install_nvidia=true
             ;;
     esac
     shift
@@ -93,7 +97,6 @@ yay -Sy --needed \
     kate \
     kitty \
     libpulse \
-    libva-nvidia-driver \
     libva-utils \
     libvdpau-va-gl \
     libvirt \
@@ -115,8 +118,6 @@ yay -Sy --needed \
     noto-fonts-extra \
     npm \
     ntfs-3g \
-    nvidia-open-dkms \
-    nvidia-settings \
     nvtop \
     nwg-displays \
     nwg-look \
@@ -199,7 +200,6 @@ yay -Sy --needed \
     xorg-xinit \
     xorg-xlsclients \
     xournalpp \
-    yay-bin \
     yt-dlp \
     zip \
     zram-generator \
@@ -218,6 +218,13 @@ if install_optional; then
         flameshot-git \
         path-of-building-community-git \
         thunderbird
+fi
+
+if install_nvidia; then
+    yay -Sy --needed \
+        libva-nvidia-driver \
+        nvidia-open-dkms \
+        nvidia-settings \
 fi
 
 bash ./scripts/install-oh-my-zsh.sh

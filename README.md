@@ -7,5 +7,7 @@ git submodule update --init --recursive
 dotter -dl config_name
 ```
 
-Install scrip has optional parameters `--optional`,
+Install scrip has optional parameters 
+`--optional`,
+`--nvidia`,
 `--android` (Installs android studio).
