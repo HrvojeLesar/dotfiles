@@ -203,15 +203,18 @@ yay -Sy --needed \
     yt-dlp \
     zip \
     zram-generator \
-    zsh
+    zsh \
+    rbw \
+    rofi-rbw \
+    dotool
 
-if install_android_studio; then
+if [ "$install_android_studio" = true ]; then
     yay -Sy --needed \
         android-studio \
         android-tools
 fi
 
-if install_optional; then
+if [ "$install_optional" = true ]; then
     yay -Sy --needed \
         audacity \
         chromium \
@@ -220,7 +223,7 @@ if install_optional; then
         thunderbird
 fi
 
-if install_nvidia; then
+if [ "$install_nvidia" = true ]; then
     yay -Sy --needed \
         libva-nvidia-driver \
         nvidia-open-dkms \
@@ -230,5 +233,6 @@ fi
 bash ./scripts/install-oh-my-zsh.sh
 bash ./scripts/enable-gcr-ssh-agent.sh
 bash ./scripts/install-hyprland-plugins.sh
+bash ./scripts/enable-systemd-resolved.sh
 
 rm -rf yay-bin

@@ -18,6 +18,7 @@
         "custom/spotify",
         "memory",
         "cpu",
+        "custom/wireguard-manager",
         "pulseaudio",
         "network",
         "hyprland/language",
