@@ -68,8 +68,6 @@ yay -Sy --needed \
     gnome-calculator \
     gnome-power-manager \
     gnome-system-monitor \
-    gnome-themes-extra \
-    gnome-tweaks \
     gnu-netcat \
     go \
     gparted \
@@ -107,7 +105,6 @@ yay -Sy --needed \
     man-db \
     man-pages \
     meson \
-    nano \
     neovim \
     network-manager-applet \
     networkmanager \
@@ -125,7 +122,6 @@ yay -Sy --needed \
     pacman-contrib \
     pass \
     pavucontrol \
-    pinta \
     pipewire \
     pipewire-alsa \
     pipewire-jack \
@@ -167,7 +163,6 @@ yay -Sy --needed \
     ttf-font-awesome \
     ttf-liberation \
     ttf-ubuntu-font-family \
-    tuned \
     v4l2loopback-dkms \
     vdpauinfo \
     vim \
