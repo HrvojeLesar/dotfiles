@@ -229,5 +229,6 @@ bash ./scripts/install-oh-my-zsh.sh
 bash ./scripts/enable-gcr-ssh-agent.sh
 bash ./scripts/install-hyprland-plugins.sh
 bash ./scripts/enable-systemd-resolved.sh
+bash ./scripts/install-systemd-swapoff-before-shutdown.sh
 
 rm -rf yay-bin
