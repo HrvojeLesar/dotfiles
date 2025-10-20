@@ -68,6 +68,7 @@ yay -Sy --needed \
     gnome-calculator \
     gnome-power-manager \
     gnome-system-monitor \
+    gnome-themes-extra \
     gnu-netcat \
     go \
     gparted \
