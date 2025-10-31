@@ -202,7 +202,9 @@ yay -Sy --needed \
     zsh \
     rbw \
     rofi-rbw \
-    dotool
+    dotool \
+    mpv-mpris \
+    mpv
 
 if [ "$install_android_studio" = true ]; then
     yay -Sy --needed \

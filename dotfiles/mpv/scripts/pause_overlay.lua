@@ -11,7 +11,10 @@ function toggle_effect(pause)
 	end
 end
 
--- Observe the pause property and call toggle_effect when it changes
-mp.observe_property("pause", "bool", function(name, value)
-	toggle_effect(value)
-end)
+local init = mp.get_opt("bg") or nil
+
+if init == "y" then
+	mp.observe_property("pause", "bool", function(name, value)
+		toggle_effect(value)
+	end)
+end
