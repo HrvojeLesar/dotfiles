@@ -367,6 +367,7 @@
         "interval": 1,
         "on-click": "playerctld shift",
         "on-click-right": "playerctld unshift",
+        "on-click-middle": "playerctl play-pause",
     },
 
     "custom/events": {
