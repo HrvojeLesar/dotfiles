@@ -67,3 +67,9 @@ default_target_type = "symbolic"
 
 [wojk_ssh_config.files]
 "dotfiles/wojk/ssh/config" = "~/.ssh/config"
+
+[udev_dotool.files]
+"dotfiles/etc/udev/rules.d/80-dotool.rules" = "/etc/udev/rules.d/80-dotool.rules"
+
+[udev_keychron_kb.files]
+"dotfiles/etc/udev/rules.d/99-keychron.rules" = "/etc/udev/rules.d/99-keychron.rules"
