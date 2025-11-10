@@ -204,7 +204,8 @@ yay -Sy --needed \
     rofi-rbw \
     dotool \
     mpv-mpris \
-    mpv
+    mpv \
+    otf-font-awesome
 
 if [ "$install_android_studio" = true ]; then
     yay -Sy --needed \
