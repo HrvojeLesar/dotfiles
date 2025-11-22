@@ -73,3 +73,6 @@ default_target_type = "symbolic"
 
 [udev_keychron_kb.files]
 "dotfiles/etc/udev/rules.d/99-keychron.rules" = "/etc/udev/rules.d/99-keychron.rules"
+
+[misc_spotify.files]
+"dotfiles/misc/spotify-flags.conf" = "~/.config/spotify-flags.conf"

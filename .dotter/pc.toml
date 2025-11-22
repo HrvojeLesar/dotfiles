@@ -16,7 +16,8 @@ packages = [
     "ssh",
     "wojk_ssh",
     "udev_dotool",
-    "udev_keychron_kb"
+    "udev_keychron_kb",
+    "misc_spotify",
 ]
 
 [files]
