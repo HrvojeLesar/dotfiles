@@ -177,7 +177,7 @@ yay -Sy --needed \
     waypaper \
     webkit2gtk-4.1 \
     wev \
-    wezterm-git \
+    wezterm \
     wget \
     wine \
     wine-gecko \
@@ -205,7 +205,8 @@ yay -Sy --needed \
     dotool \
     mpv-mpris \
     mpv \
-    otf-font-awesome
+    otf-font-awesome \
+    ghostty
 
 if [ "$install_android_studio" = true ]; then
     yay -Sy --needed \

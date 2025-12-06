@@ -76,3 +76,6 @@ default_target_type = "symbolic"
 
 [misc_spotify.files]
 "dotfiles/misc/spotify-flags.conf" = "~/.config/spotify-flags.conf"
+
+[ghostty.files]
+"dotfiles/ghostty/config" = "~/.config/ghostty/config"

@@ -18,6 +18,7 @@ packages = [
     "udev_dotool",
     "udev_keychron_kb",
     "misc_spotify",
+    "ghostty",
 ]
 
 [files]
