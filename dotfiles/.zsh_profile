@@ -90,3 +90,8 @@ dipl() {
     tmux send-keys -t:1 "nvim ." C-m
     tmux attach-session
 }
+PATH="$PATH:/home/hrvoje/.dotnet/tools"
+
+alias mkvenv="python3 -m venv .venv"
+alias fastapi="python3 -m fastapi"
+alias swvenv="source .venv/bin/activate"
