@@ -47,10 +47,8 @@ wall_selection=$(find "${wall_dir}"  -maxdepth 1  -xtype f \( -iname "*.jpg" -o 
 [[ -n "$wall_selection" ]] || exit 1
 pkill mpvpaper
 sleep 0.5
-hyprctl hyprpaper preload ${wall_dir}/${wall_selection}
-hyprctl hyprpaper wallpaper DP-4,contain:${wall_dir}/${wall_selection}
-hyprctl hyprpaper wallpaper HDMI-A-2,contain:${wall_dir}/${wall_selection}
-hyprctl hyprpaper wallpaper ,contain:${wall_dir}/${wall_selection}
-hyprctl hyprpaper unload unused
+hyprctl hyprpaper wallpaper DP-4,${wall_dir}/${wall_selection},contain
+hyprctl hyprpaper wallpaper HDMI-A-2,${wall_dir}/${wall_selection},contain
+hyprctl hyprpaper wallpaper ,${wall_dir}/${wall_selection},contain
 
 exit 0
