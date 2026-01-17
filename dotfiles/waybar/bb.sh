@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
-names="lr_m.jpg nov_nb.jpeg guc_m.jpg W_m.jpeg lon_m.jpg orig_m_nb.jpg ni_m.jpg"
+# names="lr_m.jpg nov_nb.jpeg guc_m.jpg W_m.jpeg lon_m.jpg orig_m_nb.jpg ni_m.jpg"
+names="02_d300577b6ec4c1eef265acc9e9f5fc64_01.jpg 5206dea2f0a917ba27ac4ffdb5dd6173_01.jpg 6419ee59b8723dafa89399b428bdc3b2_01.jpg exarch.png"
 
 if [ "$1" == "enable" ]; then
     echo "enabled"
@@ -14,10 +15,9 @@ fi
 if [ "$1" == "remove" ]; then
     echo "removed file"
     rm /tmp/bb-enabled
-    hyprctl hyprpaper preload /home/hrvoje/.config/hypr/wallpapers/exarch.png
-    hyprctl hyprpaper wallpaper DP-4,contain:/home/hrvoje/.config/hypr/wallpapers/exarch.png
-    hyprctl hyprpaper wallpaper HDMI-A-2,contain:/home/hrvoje/.config/hypr/wallpapers/exarch.png
-    hyprctl hyprpaper wallpaper ,contain:/home/hrvoje/.config/hypr/wallpapers/exarch.png
+    hyprctl hyprpaper wallpaper DP-4,/home/hrvoje/.config/hypr/wallpapers/exarch.png,contain
+    hyprctl hyprpaper wallpaper HDMI-A-2,/home/hrvoje/.config/hypr/wallpapers/exarch.png,contain
+    hyprctl hyprpaper wallpaper ,/home/hrvoje/.config/hypr/wallpapers/exarch.png,contain
 fi
 
 if [ "$1" == "check" ]; then
@@ -54,6 +54,4 @@ echo "$file_name" > /tmp/bb-enabled
 
 file="/home/hrvoje/.config/hypr/wallpapers/$file_name"
 
-hyprctl hyprpaper preload $file
-hyprctl hyprpaper wallpaper DP-4,contain:$file
-hyprctl hyprpaper unload unused
+hyprctl hyprpaper wallpaper DP-4,$file,contain
