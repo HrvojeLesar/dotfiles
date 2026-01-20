@@ -18,5 +18,4 @@ echo "10.11.12.1 fade01.factory.vpn fade01.vpn fade01
 10.11.12.8 gitlab.factory.vpn git.factory.vpn gitlab git
 10.11.12.9 atalanta.factory.vpn atalanta runner gitrunner
 10.11.12.10 phoenix.factory.vpn phoenix backup.factory.vpn backup
-10.111.111.1 skynet.factory.vpn skynet
 " | sudo tee -a /etc/hosts
