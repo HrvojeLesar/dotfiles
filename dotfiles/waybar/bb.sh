@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
-# names="lr_m.jpg nov_nb.jpeg guc_m.jpg W_m.jpeg lon_m.jpg orig_m_nb.jpg ni_m.jpg"
-names="02_d300577b6ec4c1eef265acc9e9f5fc64_01.jpg 5206dea2f0a917ba27ac4ffdb5dd6173_01.jpg 6419ee59b8723dafa89399b428bdc3b2_01.jpg exarch.png"
+names="01_49695845b2d0d020082b36a7e7575357.jpg 02_d300577b6ec4c1eef265acc9e9f5fc64_01.jpg exarch.png"
 
 if [ "$1" == "enable" ]; then
     echo "enabled"
