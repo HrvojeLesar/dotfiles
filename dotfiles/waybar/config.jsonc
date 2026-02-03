@@ -11,7 +11,7 @@
 
         // Choose the order of the modules
         "modules-left": ["hyprland/workspaces", "hyprland/workspaces#special"],
-        "modules-center": ["custom/events", "custom/bb-interval"],
+        "modules-center": ["hyprland/window", "custom/events", "custom/bb-interval"],
         "modules-right": [
             "custom/bb-check",
             "tray",
@@ -44,7 +44,7 @@
         "output": ["HDMI-A-2"],
         // Choose the order of the modules
         "modules-left": ["hyprland/workspaces", "hyprland/workspaces#special"],
-        "modules-center": ["custom/events"],
+        "modules-center": ["hyprland/window", "custom/events"],
         "modules-right": [
             "custom/bb-check",
             "tray",

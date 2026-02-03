@@ -46,12 +46,10 @@
 
     // Hyprland Window
     "hyprland/window": {
+        "format": "{class}:{title}",
         "rewrite": {
-            "(.*) - Brave": "$1",
-            "(.*) - Chromium": "$1",
-            "(.*) - Brave Search": "$1",
-            "(.*) - Outlook": "$1",
-            "(.*) Microsoft Teams": "$1",
+            "^(?!(pyfa.py|REAPER):).*": "",
+            "^(pyfa.py|REAPER):(.*)$": "$2",
         },
         "separate-outputs": true,
     },
