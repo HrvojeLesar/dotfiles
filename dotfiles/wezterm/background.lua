@@ -59,7 +59,7 @@ local function change_background_opacity(overrides)
         if overrides.window_background_opacity == 1.0 then
             first_layer_opacity = 1.0
         end
-        local colors = wezterm.color.get_builtin_schemes()[globals.COLOR_SCHEME]
+        local colors = globals.ATOM_ONE_DARK_COLOURS;
 
         return {
             window_background_opacity = overrides.window_background_opacity or 0.95,
@@ -97,7 +97,7 @@ wezterm.on("toggle-opacity", function(window)
     local overrides = window:get_config_overrides() or {}
     local current_opacity = overrides.window_background_opacity
     if current_opacity == globals.OPACITY then
-        overrides.window_background_opacity = 0.66
+        overrides.window_background_opacity = globals.OTHER_OPACITY
     else
         overrides.window_background_opacity = globals.OPACITY
     end
