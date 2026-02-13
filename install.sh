@@ -89,7 +89,8 @@ yay -Sy --needed \
     hyprshot \
     hyprsunset \
     hyprsysteminfo \
-    hyprutils \
+    libcava \
+    glib2-devel \
     imagemagick \
     imv \
     iwd \

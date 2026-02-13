@@ -3,7 +3,6 @@ packages = [
     "cliphist",
     "flameshot",
     "hypr",
-    "nvim",
     "rofi",
     "systemd",
     "waybar",

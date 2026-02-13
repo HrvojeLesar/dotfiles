@@ -1,6 +1,7 @@
 [Added Associations]
 image/jpeg=org.gnome.eog.desktop;
 image/png=org.gnome.eog.desktop;
+application/x-shellscript=nvim.desktop;
 
 [Default Applications]
 text/html=brave-browser.desktop
@@ -33,3 +34,5 @@ application/x-bzip2-compressed-tar=org.gnome.Nautilus.desktop
 application/x-7z-compressed=org.gnome.Nautilus.desktop
 application/x-tarz=org.gnome.Nautilus.desktop
 application/vnd.rar=org.gnome.Nautilus.desktop
+application/x-shellscript=nvim.desktop
+x-scheme-handler/terminal=org.wezfurlong.wezterm.desktop

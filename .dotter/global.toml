@@ -12,9 +12,6 @@ default_target_type = "symbolic"
 [hypr.files]
 "dotfiles/hypr" = "~/.config/hypr"
 
-[nvim.files]
-"dotfiles/neovim.files" = "~/.config/nvim"
-
 [rofi.files]
 "dotfiles/rofi" = "~/.config/rofi"
 

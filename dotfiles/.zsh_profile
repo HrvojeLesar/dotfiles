@@ -60,8 +60,8 @@ export LD_LIBRARY_PATH=/usr/local/lib/x86_64-linux-gnu/
 alias srv2="ssh -p 69 hrvek@srv2.hrveklesarov.com"
 
 export JAVA_HOME="/home/hrvoje/.sdkman/candidates/java/19-open"
-export ANDROID_HOME="$HOME/Android/Sdk"
-export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
+# export ANDROID_HOME="$HOME/Android/Sdk"
+# export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 
 alias nfs-pf="ssh -NL 3049:localhost:2049 hrvek@srv2.hrveklesarov.com"
 alias mount-nfs-ssh="sudo mount -t nfs4 -o port=3049 localhost:/home/hrvek/jellyfin /home/hrvoje/mnt-srv2"
