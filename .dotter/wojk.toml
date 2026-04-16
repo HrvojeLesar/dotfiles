@@ -14,8 +14,6 @@ packages = [
     "zsh",
     "mime",
     "ssh",
-    "wojk_ssh",
-    "wojk_ssh_config",
     "ghostty",
 ]
 
