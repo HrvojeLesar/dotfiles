@@ -4,6 +4,7 @@ image/png=org.gnome.eog.desktop;imv-dir.desktop;
 application/x-shellscript=nvim.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
 application/x-msdownload=wine.desktop;
+application/x-partial-download=mpv.desktop;
 
 [Default Applications]
 text/html=brave-browser.desktop

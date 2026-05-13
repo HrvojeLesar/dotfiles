@@ -59,7 +59,7 @@ export LD_LIBRARY_PATH=/usr/local/lib/x86_64-linux-gnu/
 
 alias srv2="ssh -p 69 hrvek@srv2.hrveklesarov.com"
 
-export JAVA_HOME="/home/hrvoje/.sdkman/candidates/java/19-open"
+export JAVA_HOME="/home/hrvoje/.sdkman/candidates/java/current"
 # export ANDROID_HOME="$HOME/Android/Sdk"
 # export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 
@@ -77,21 +77,10 @@ alias bb-enable="~/.config/waybar/bb.sh enable"
 
 export TERMINAL="/usr/bin/wezterm"
 
-dipl() {
-    # tmux new-session -d -c ~/dev/diplomski/RPGBattleMonitor/rpg_battle_monitor_lib
-    tmux new-session -d -c ~/dev/diplomski/RPGBattleMonitor/rpg_battle_monitor_frontend
-    tmux new-window -c ~/dev/diplomski/RPGBattleMonitor/rpg_battle_monitor_frontend
-    tmux send-keys -t:2 "npm run dev" C-m
-    tmux new-window -c ~/dev/diplomski/RPGBattleMonitor/rpg_battle_monitor_lib
-    tmux new-window -c ~/dev/diplomski/RPGBattleMonitor/rpg_battle_monitor_server
-    tmux send-keys -t:4 "cargo run" C-m
-    tmux select-window -t:2
-    tmux select-window -t:1
-    tmux send-keys -t:1 "nvim ." C-m
-    tmux attach-session
-}
 PATH="$PATH:/home/hrvoje/.dotnet/tools"
 
 alias mkvenv="python3 -m venv .venv"
 alias fastapi="python3 -m fastapi"
 alias swvenv="source .venv/bin/activate"
+
+export PATH=$PATH:$HOME/go/bin
