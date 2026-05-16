@@ -78,7 +78,7 @@ hl.window_rule({
 	match = { class = "^(flameshot)$" },
 })
 hl.window_rule({
-    fullscreen_state = "0 2",
+	fullscreen_state = "0 2",
 	match = { class = "^(flameshot)$" },
 })
 hl.window_rule({
@@ -178,7 +178,7 @@ hl.window_rule({
 	match = { tag = "eve_client" },
 })
 hl.window_rule({
-    fullscreen_state = "0 1",
+	fullscreen_state = "0 1",
 	match = { tag = "eve_client" },
 })
 hl.window_rule({
@@ -197,7 +197,7 @@ hl.window_rule({
 	match = { class = "^dota2$" },
 })
 hl.window_rule({
-    fullscreen_state = "0 1",
+	fullscreen_state = "0 1",
 	match = { class = "^dota2$" },
 })
 hl.window_rule({
@@ -227,7 +227,7 @@ hl.window_rule({
 	match = { class = "^steam_app_233860$" },
 })
 hl.window_rule({
-    fullscreen_state = "0 0",
+	fullscreen_state = "0 0",
 	match = { class = "^steam_app_233860$" },
 })
 hl.window_rule({

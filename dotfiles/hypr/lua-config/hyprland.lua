@@ -50,6 +50,10 @@ local general = {
 	allow_tearing = false,
 
 	layout = "dwindle",
+
+	snap = {
+		enabled = true,
+	},
 }
 
 local decoration = {
@@ -109,7 +113,7 @@ local input = {
 }
 
 local cursor = {
-	no_hardware_cursors = 0,
+	no_hardware_cursors = 1,
 	default_monitor = "DP-4",
 }
 
@@ -124,6 +128,33 @@ local group = {
 		},
 		border_inactive = "rgba(595959aa)",
 	},
+
+	groupbar = {
+		font_size = 16,
+		gradients = true,
+		height = 12,
+		indicator_height = 4,
+		gaps_out = 4,
+
+		col = {
+			active = {
+				colors = { "rgba(33ccffee)" },
+			},
+			inactive = {
+				colors = { "rgba(595959aa)" },
+			},
+			locked_active = {
+				colors = { "rgba(00ff99ee)" },
+			},
+			locked_inactive = {
+				colors = { "rgba(595959aa)" },
+			},
+		},
+	},
+}
+
+local scrolling = {
+	wrap_focus = false,
 }
 
 local debug = {
@@ -140,6 +171,7 @@ hl.config({
 	cursor = cursor,
 	group = group,
 	debug = debug,
+	scrolling = scrolling,
 })
 
 hl.device({

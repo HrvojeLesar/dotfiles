@@ -1,10 +1,43 @@
 local G = require("globals")
 local hs = require("plugins.hyprsplit")
+hs.config({
+	num_workspaces = 10,
+	persistent_workspaces = true,
+})
 
 --- @param bind string
 --- @return string
 local function k(bind)
 	return G.main_mod .. " + " .. bind
+end
+
+--- @param by number
+local function zoom(by)
+	local zoom_factor = hl.get_config("cursor.zoom_factor")
+
+	if type(zoom_factor) ~= "number" then
+		return
+	end
+
+	zoom_factor = zoom_factor + by
+
+	hl.config({
+		cursor = { zoom_factor = zoom_factor },
+	})
+end
+
+--- @param direction string
+local function focus(direction)
+	local workspace = hl.get_active_workspace()
+	if workspace == nil then
+		return
+	end
+
+	if workspace.tiled_layout ~= "scrolling" then
+		hl.dispatch(hl.dsp.focus({ direction = direction }))
+	else
+        hl.dispatch(hl.dsp.layout("focus " .. direction))
+	end
 end
 
 hl.bind(k("M"), hl.dsp.exit())
@@ -37,30 +70,36 @@ hl.bind(k("D"), hl.dsp.exec_cmd("discord --enable-features=UseOzonePlatform --oz
 hl.bind(k("CONTROL + SHIFT + ALT + O"), hl.dsp.exec_cmd("~/.config/rofi/wallpaper-launcher.sh"))
 hl.bind(k("CONTROL + SHIFT + ALT + I"), hl.dsp.exec_cmd("~/.config/rofi/run-i.sh"))
 
-hl.bind(
-	k("mouse_down"),
-	hl.dsp.exec_cmd(
-		"hyprctl keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 + 0.5}'"
-	)
-)
-hl.bind(
-	k("mouse_up"),
-	hl.dsp.exec_cmd(
-		"hyprctl keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 - 0.5}')"
-	)
-)
-hl.bind(k("SHIFT + mouse_up"), hl.dsp.exec_cmd("hyprctl keyword cursor:zoom_factor 1"))
+hl.bind(k("mouse_down"), function()
+	zoom(0.5)
+end)
+hl.bind(k("mouse_up"), function()
+	zoom(-0.5)
+end)
+hl.bind(k("SHIFT + mouse_up"), function()
+	hl.config({
+		cursor = { zoom_factor = 1.0 },
+	})
+end)
 
 --  Window management
 hl.bind(k("Space"), hl.dsp.window.float())
-hl.bind(k("F"), hl.dsp.window.fullscreen_state({ internal = 2, client = 0 }))
-hl.bind(k("SHIFT + F"), hl.dsp.window.fullscreen_state({ internal = 1, client = 0 }))
+hl.bind(k("F"), hl.dsp.window.fullscreen_state({ internal = 2, client = 0, action = "toggle" }))
+hl.bind(k("SHIFT + F"), hl.dsp.window.fullscreen_state({ internal = 1, client = 0, action = "toggle" }))
 
 -- Move focus
-hl.bind(k("H"), hl.dsp.focus({ direction = "l" }))
-hl.bind(k("L"), hl.dsp.focus({ direction = "r" }))
-hl.bind(k("K"), hl.dsp.focus({ direction = "u" }))
-hl.bind(k("J"), hl.dsp.focus({ direction = "d" }))
+hl.bind(k("H"), function()
+	focus("l")
+end)
+hl.bind(k("L"), function()
+	focus("r")
+end)
+hl.bind(k("K"), function()
+	focus("u")
+end)
+hl.bind(k("J"), function()
+	focus("d")
+end)
 
 -- Move window
 hl.bind(k("SHIFT + H"), hl.dsp.window.move({ direction = "l" }))
@@ -75,10 +114,10 @@ hl.bind(k("CONTROL + SHIFT + K"), hl.dsp.window.move({ monitor = "u" }))
 hl.bind(k("CONTROL + SHIFT + J"), hl.dsp.window.move({ monitor = "d" }))
 
 -- Resize window
-hl.bind(k("CONTROL + H"), hl.dsp.window.resize({ x = -25, y = 0 }), { repeating = true })
-hl.bind(k("CONTROL + L"), hl.dsp.window.resize({ x = 25, y = 0 }), { repeating = true })
-hl.bind(k("CONTROL + K"), hl.dsp.window.resize({ x = 0, y = -25 }), { repeating = true })
-hl.bind(k("CONTROL + J"), hl.dsp.window.resize({ x = 0, y = 25 }), { repeating = true })
+hl.bind(k("CONTROL + H"), hl.dsp.window.resize({ x = -25, y = 0, relative = true }), { repeating = true })
+hl.bind(k("CONTROL + L"), hl.dsp.window.resize({ x = 25, y = 0, relative = true }), { repeating = true })
+hl.bind(k("CONTROL + K"), hl.dsp.window.resize({ x = 0, y = -25, relative = true }), { repeating = true })
+hl.bind(k("CONTROL + J"), hl.dsp.window.resize({ x = 0, y = 25, relative = true }), { repeating = true })
 
 if hs ~= nil then
 	hl.bind(k("1"), hs.dsp.focus({ workspace = 1 }))
@@ -166,7 +205,7 @@ hl.bind(k("X"), hl.dsp.exec_cmd("~/.config/hypr/move-to-restore.sh"))
 hl.bind(k("R"), hl.dsp.exec_cmd("~/.config/hypr/restore-window.sh"))
 hl.bind(k("ALT + P"), hl.dsp.window.pin())
 hl.bind(k("ALT + F"), hl.dsp.window.tag({ tag = "+freeze" }))
-hl.bind(k("CONTROL + F"), hl.dsp.window.tag({ tag = "-freeze" }))
+hl.bind(k("CONTROL + F"), hl.dsp.window.tag({ tag = "-freeze", window = "tag:freeze" }))
 hl.bind(k("SHIFT + G"), hl.dsp.window.tag({ tag = "opacity-85" }))
 
 hl.bind(k("S"), hl.dsp.workspace.toggle_special("spotify"))
