@@ -40,6 +40,8 @@ config.window_padding = {
     bottom = 0,
 }
 
+config.default_ssh_auth_sock = string.format("%s/gcr/ssh", os.getenv("XDG_RUNTIME_DIR"))
+
 config.mouse_bindings = {
     -- Bind 'Up' event of CTRL-Click to open hyperlinks
     {

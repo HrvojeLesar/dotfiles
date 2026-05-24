@@ -1,5 +1,6 @@
 local G = require("globals")
 local hs = require("plugins.hyprsplit")
+
 hs.config({
 	num_workspaces = 10,
 	persistent_workspaces = true,
@@ -177,27 +178,27 @@ hl.bind(k("CONTROL + SHIFT + N"), hl.dsp.window.move({ workspace = "emptyn" }), 
 hl.bind(k("CONTROL + SHIFT + P"), hl.dsp.window.move({ workspace = "emptym" }), { repeating = true })
 
 if hs ~= nil then
-	hl.bind(k("CONTROL + 1"), hs.dsp.window.move({ workspace = 1 }))
-	hl.bind(k("CONTROL + 2"), hs.dsp.window.move({ workspace = 2 }))
-	hl.bind(k("CONTROL + 3"), hs.dsp.window.move({ workspace = 3 }))
-	hl.bind(k("CONTROL + 4"), hs.dsp.window.move({ workspace = 4 }))
-	hl.bind(k("CONTROL + 5"), hs.dsp.window.move({ workspace = 5 }))
-	hl.bind(k("CONTROL + 6"), hs.dsp.window.move({ workspace = 6 }))
-	hl.bind(k("CONTROL + 7"), hs.dsp.window.move({ workspace = 7 }))
-	hl.bind(k("CONTROL + 8"), hs.dsp.window.move({ workspace = 8 }))
-	hl.bind(k("CONTROL + 9"), hs.dsp.window.move({ workspace = 9 }))
-	hl.bind(k("CONTROL + 0"), hs.dsp.window.move({ workspace = 10 }))
+	hl.bind(k("CONTROL + 1"), hs.dsp.window.move({ workspace = 1, follow = false }))
+	hl.bind(k("CONTROL + 2"), hs.dsp.window.move({ workspace = 2, follow = false }))
+	hl.bind(k("CONTROL + 3"), hs.dsp.window.move({ workspace = 3, follow = false }))
+	hl.bind(k("CONTROL + 4"), hs.dsp.window.move({ workspace = 4, follow = false }))
+	hl.bind(k("CONTROL + 5"), hs.dsp.window.move({ workspace = 5, follow = false }))
+	hl.bind(k("CONTROL + 6"), hs.dsp.window.move({ workspace = 6, follow = false }))
+	hl.bind(k("CONTROL + 7"), hs.dsp.window.move({ workspace = 7, follow = false }))
+	hl.bind(k("CONTROL + 8"), hs.dsp.window.move({ workspace = 8, follow = false }))
+	hl.bind(k("CONTROL + 9"), hs.dsp.window.move({ workspace = 9, follow = false }))
+	hl.bind(k("CONTROL + 0"), hs.dsp.window.move({ workspace = 10, follow = false }))
 else
-	hl.bind(k("CONTROL + 1"), hl.dsp.window.move({ workspace = 1 }))
-	hl.bind(k("CONTROL + 2"), hl.dsp.window.move({ workspace = 2 }))
-	hl.bind(k("CONTROL + 3"), hl.dsp.window.move({ workspace = 3 }))
-	hl.bind(k("CONTROL + 4"), hl.dsp.window.move({ workspace = 4 }))
-	hl.bind(k("CONTROL + 5"), hl.dsp.window.move({ workspace = 5 }))
-	hl.bind(k("CONTROL + 6"), hl.dsp.window.move({ workspace = 6 }))
-	hl.bind(k("CONTROL + 7"), hl.dsp.window.move({ workspace = 7 }))
-	hl.bind(k("CONTROL + 8"), hl.dsp.window.move({ workspace = 8 }))
-	hl.bind(k("CONTROL + 9"), hl.dsp.window.move({ workspace = 9 }))
-	hl.bind(k("CONTROL + 0"), hl.dsp.window.move({ workspace = 10 }))
+	hl.bind(k("CONTROL + 1"), hl.dsp.window.move({ workspace = 1, follow = false }))
+	hl.bind(k("CONTROL + 2"), hl.dsp.window.move({ workspace = 2, follow = false }))
+	hl.bind(k("CONTROL + 3"), hl.dsp.window.move({ workspace = 3, follow = false }))
+	hl.bind(k("CONTROL + 4"), hl.dsp.window.move({ workspace = 4, follow = false }))
+	hl.bind(k("CONTROL + 5"), hl.dsp.window.move({ workspace = 5, follow = false }))
+	hl.bind(k("CONTROL + 6"), hl.dsp.window.move({ workspace = 6, follow = false }))
+	hl.bind(k("CONTROL + 7"), hl.dsp.window.move({ workspace = 7, follow = false }))
+	hl.bind(k("CONTROL + 8"), hl.dsp.window.move({ workspace = 8, follow = false }))
+	hl.bind(k("CONTROL + 9"), hl.dsp.window.move({ workspace = 9, follow = false }))
+	hl.bind(k("CONTROL + 0"), hl.dsp.window.move({ workspace = 10, follow = false }))
 end
 
 hl.bind(k("CONTROL + S"), hl.dsp.workspace.toggle_special("restore"))
@@ -246,8 +247,8 @@ hl.bind(k("SHIFT + V"), hl.dsp.exec_cmd("rofi-rbw"))
 hl.bind(k("SHIFT + E"), hl.dsp.exec_cmd("rofimoji -a copy"))
 
 hl.bind(k("CONTROL + SHIFT + G"), hl.dsp.group.toggle())
-hl.bind(k("TAB"), hl.dsp.group.next())
-hl.bind(k("SHIFT + TAB"), hl.dsp.group.prev())
+hl.bind(k("TAB"), hl.dsp.group.next(), { repeating = true })
+hl.bind(k("SHIFT + TAB"), hl.dsp.group.prev(), { repeating = true })
 hl.bind(k("G"), hl.dsp.window.move({ out_of_group = true }))
 
 hl.bind(k("Y"), hl.dsp.global("quickshell:sidebar-toggle-pin"))

@@ -6,6 +6,9 @@ require("keybindings")
 require("monitors")
 require("windows")
 
+local dynamic_cursors = require("plugins.dynamic-cursors")
+dynamic_cursors.setup_dyanimc_cursors()
+
 hl.on("hyprland.start", function()
 	hl.exec_cmd('gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"')
 	hl.exec_cmd('gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"')
@@ -154,7 +157,7 @@ local group = {
 }
 
 local scrolling = {
-	wrap_focus = false,
+	wrap_focus = true,
 }
 
 local debug = {

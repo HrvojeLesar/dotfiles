@@ -6,6 +6,8 @@ hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, rounding = 0 }
 hl.window_rule({ match = { float = false, workspace = "f[1]" }, border_size = 0 })
 hl.window_rule({ match = { float = false, workspace = "f[1]" }, rounding = 0 })
 
+-- hl.workspace_rule({ workspace = "12", layout = "scrolling", gaps_out = 0, gaps_in = 0, no_rounding = true })
+
 hl.window_rule({
 	suppress_event = "maximize",
 	match = { class = "*" },
@@ -279,4 +281,20 @@ hl.window_rule({
 hl.window_rule({
 	tile = true,
 	match = { class = "cs2" },
+})
+
+-- Deadlock settings
+hl.window_rule({
+	tag = "+deadlock",
+	match = { class = "steam_app_1422450" },
+})
+hl.window_rule({
+	workspace = "12 silent",
+	fullscreen = false,
+	float = false,
+	tile = true,
+	fullscreen_state = "0 1",
+	allows_input = true,
+	render_unfocused = true,
+	match = { tag = "deadlock" },
 })
