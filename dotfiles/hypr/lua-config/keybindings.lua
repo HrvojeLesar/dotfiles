@@ -37,8 +37,56 @@ local function focus(direction)
 	if workspace.tiled_layout ~= "scrolling" then
 		hl.dispatch(hl.dsp.focus({ direction = direction }))
 	else
-        hl.dispatch(hl.dsp.layout("focus " .. direction))
+		hl.dispatch(hl.dsp.layout("focus " .. direction))
 	end
+end
+
+local function move_to_restore()
+	local window = hl.get_active_window()
+	if window == nil then
+		return
+	end
+
+	if window.pinned then
+		hl.dispatch(hl.dsp.window.pin())
+	end
+
+	hl.dispatch(hl.dsp.window.move({ workspace = "special:restore", follow = false }))
+end
+
+--- @param s string
+--- @return string
+local function shell_quote(s)
+	return "'" .. s:gsub("'", "'\\''") .. "'"
+end
+
+local function restore_window()
+	local entries = {}
+	local addresses = {}
+
+	for _, window in ipairs(hl.get_windows()) do
+		if window.workspace ~= nil and window.workspace.name == "special:restore" then
+			local title = (window.title or ""):gsub("\n", " ")
+			local initial_title = (window.initial_title or ""):gsub("\n", " ")
+			entries[#entries + 1] = shell_quote(title .. " | " .. initial_title)
+			addresses[#addresses + 1] = shell_quote(window.address)
+		end
+	end
+
+	if #entries == 0 then
+		return
+	end
+
+	hl.exec_cmd(
+		string.format(
+			"idx=$(printf '%%s\\n' %s | rofi -dmenu -format i -p 'Restore window'); "
+				.. '[ -n "$idx" ] || exit 0; '
+				.. "addr=$(printf '%%s\\n' %s | sed -n \"$((idx + 1))p\"); "
+                .. "hyprctl eval \"hl.dispatch(hl.dsp.window.move({ workspace = '+0', window = 'address:$addr' }))\"",
+			table.concat(entries, " "),
+			table.concat(addresses, " ")
+		)
+	)
 end
 
 hl.bind(k("M"), hl.dsp.exit())
@@ -202,8 +250,8 @@ else
 end
 
 hl.bind(k("CONTROL + S"), hl.dsp.workspace.toggle_special("restore"))
-hl.bind(k("X"), hl.dsp.exec_cmd("~/.config/hypr/move-to-restore.sh"))
-hl.bind(k("R"), hl.dsp.exec_cmd("~/.config/hypr/restore-window.sh"))
+hl.bind(k("X"), move_to_restore)
+hl.bind(k("R"), restore_window)
 hl.bind(k("ALT + P"), hl.dsp.window.pin())
 hl.bind(k("ALT + F"), hl.dsp.window.tag({ tag = "+freeze" }))
 hl.bind(k("CONTROL + F"), hl.dsp.window.tag({ tag = "-freeze", window = "tag:freeze" }))

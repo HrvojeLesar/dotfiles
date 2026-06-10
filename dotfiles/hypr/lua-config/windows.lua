@@ -298,3 +298,19 @@ hl.window_rule({
 	render_unfocused = true,
 	match = { tag = "deadlock" },
 })
+
+-- warframe settings
+hl.window_rule({
+	tag = "+warframe",
+	match = { class = "steam_app_230410" },
+})
+hl.window_rule({
+	workspace = "12 silent",
+	fullscreen = false,
+	float = false,
+	tile = true,
+	fullscreen_state = "0 1",
+	allows_input = true,
+	render_unfocused = true,
+	match = { tag = "warframe" },
+})
